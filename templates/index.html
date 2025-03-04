@@ -1,5 +1,11 @@
 {% extends 'layout.html' %}
 
+{% block button %}
+<a href="{{ url_for('add_recipe') }}">
+    Add Recipe
+</a>
+{% endblock %}
+
 {% block content %}
-<h1>HELLO WORLD</h1>
+<h3>Choose, add, edit, or delete a recipe!</h3>
 {% endblock %}

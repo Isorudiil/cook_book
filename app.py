@@ -8,6 +8,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/add-recipe')
+def add_recipe():
+    return render_template('add-recipe.html')
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

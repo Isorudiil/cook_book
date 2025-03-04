@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section id="form">
+        <form action="{{ url_for('add_recipe') }}" method="POST"></form>
+            <div class="columns">
+                <div class="col1">
+                    <div class="form-container">
+                        <label for="title"></label>
+                        <input type="text" name="title" id="title" placeholder="Cacio e Pepe">
+                    </div>
+                    <div class="form-container">
+                        <label for="meal"></label>
+                        <input type="text" name="meal" id="meal" placeholder="Dinner">
+                    </div>
+                    <div class="form-container">
+                        <label for="cook-time"></label>
+                        <input type="text" name="cook-time" id="cook-time" placeholder="45min">
+                    </div>
+                    <div class="form-container">
+                        <label for="serving-size"></label>
+                        <input type="text" name="serving-size" id="serving-size" placeholder="6">
+                    </div>
+                </div>
+
+            </div>
+    </section>
+{% endblock %}
