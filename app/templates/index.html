@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
 
-{% block button %}
-<a href="{{ url_for('add_recipe') }}">
-    Add Recipe
-</a>
-{% endblock %}
-
 {% block content %}
+<h1>Hello, {{ current_user.username }}</h1>
 <h3>See the schedule below</h3>
-<h2>January 2021</h2>
+<h2>January 20xx</h2>
 
 {% endblock %}

@@ -1,16 +1,20 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import datetime
+from app import db, login
+from datetime import datetime, timezone
+from flask_login import UserMixin
+from typing import Optional
+from werkzeug.security import generate_password_hash, check_password_hash
+import sqlalchemy as sa
+import sqlalchemy.orm as so
 
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cook_book.db'
-db = SQLAlchemy(app)
+class User(UserMixin, db.Model):
+    pass
 
 
-class Recipes(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+class Recipe(db.Model):
+    pass
 
 
-class PantryItems(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+@login.user_loader
+def load_user(id):
+    return db.session.get(User, int(id))
