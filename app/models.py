@@ -22,8 +22,9 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-class Recipe(db.Model):
-    pass
+# class Recipe(db.Model):
+#     pass
+#     # TODO: create recipe model
 
 
 @login.user_loader
